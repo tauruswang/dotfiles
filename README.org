@@ -2,4 +2,3 @@
 ** .spacemacs.d/
 * .config/
 ** omf/
-** ss.json

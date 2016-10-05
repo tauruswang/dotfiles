@@ -31,8 +31,7 @@ values."
      better-defaults
      (chinese :variables
               chinese-default-input-method 'wubi
-              chinese-enable-youdao-dict t
-              chinese-enable-fcitx t)
+              chinese-enable-youdao-dict t)
      emacs-lisp
      python
      ;; javascript

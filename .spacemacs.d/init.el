@@ -24,32 +24,33 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      osx
-     ivy
+     ;; ivy
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
      better-defaults
-     (chinese :variables
-              chinese-default-input-method 'wubi
-              chinese-enable-youdao-dict t)
+     ;; (chinese :variables
+        ;;      chinese-default-input-method 'wubi
+          ;;    chinese-enable-youdao-dict t)
      emacs-lisp
-     python
+     (python :variables
+             python-test-runner '(pytest nose))
      ;; javascript
      html
      ;; react
      git
      markdown
-     emoji
+     ;; emoji
      ;; evernote
-     org
-     org-private
-     (wakatime :variables
-               wakatime-api-key "b3ca3fa1-351f-4dee-af03-4ed70b1cdba7")
+     ;; org
+     ;; org-private
+     ;;(wakatime :variables
+      ;;         wakatime-api-key "b3ca3fa1-351f-4dee-af03-4ed70b1cdba7")
      ibuffer
-     spell-checking
-     syntax-checking
-     semantic
+     ;;spell-checking
+     ;;syntax-checking
+     ;; semantic
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -257,7 +258,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
-  (setq js2-include-node-externs t)
+  ;; (setq js2-include-node-externs t)
   (setq configuration-layer--elpa-archives
         '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
           ("org-cn"   . "http://elpa.zilongshanren.com/org/")

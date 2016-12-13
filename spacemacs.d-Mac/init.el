@@ -38,6 +38,7 @@ values."
              python-test-runner 'pytest)
      ;; javascript
      html
+     shell-scripts
      ;; react
      git
      markdown

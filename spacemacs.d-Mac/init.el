@@ -45,7 +45,7 @@ values."
      emoji
      ;; evernote
      org
-     ;; org-private
+     org-private
      ;; (wakatime :variables
                ;; wakatime-api-key "b3ca3fa1-351f-4dee-af03-4ed70b1cdba7")
      ibuffer

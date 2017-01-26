@@ -35,23 +35,18 @@ values."
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
-     ;; javascript
      html
      shell-scripts
-     ;; react
      git
      markdown
      csv
      emoji
-     ;; evernote
      org
-     org-private
-     ;; (wakatime :variables
-               ;; wakatime-api-key "b3ca3fa1-351f-4dee-af03-4ed70b1cdba7")
+     zilongshanren-org
      ibuffer
      spell-checking
      syntax-checking
-     semantic
+     (semantic :disabled-for emacs-lisp)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these

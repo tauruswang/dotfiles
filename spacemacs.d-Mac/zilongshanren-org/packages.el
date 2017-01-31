@@ -132,15 +132,18 @@ Captured %<%Y-%m-%d %H:%M>
   (setq org-capture-templates
         `(("t" "Tasks" entry
            (file+headline org-agenda-file-gtd "Inbox")
-           ,my/org-basic-task-template)
+           ,my/org-basic-task-template
+           :empty-lines 1)
           ("T" "Quick task" entry
            (file+headline org-agenda-file-gtd "Inbox")
            "* TODO %^{Task}\nSCHEDULED: %t\n"
-           :immediate-finish t)
+           :immediate-finish t
+           :empty-lines 1)
           ("i" "Interrupting task" entry
            (file+headline org-agenda-file-gtd "Inbox")
            "* STARTED %^{Task}"
-           :clock-in :clock-resume)
+           :clock-in :clock-resume
+           :empty-lines 1)
           ("j" "Journal entry" plain
            (file+datetree org-agenda-file-journal)
            "%K - %a\n%i\n%?\n"
@@ -155,6 +158,9 @@ Captured %<%Y-%m-%d %H:%M>
            :unnarrowed t)
           ("q" "Quick note" item
            (file+headline org-agenda-file-note "Quick notes"))
+          ("s" "Code Snippet" entry
+           (file org-agenda-file-code-snippet)
+           "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
           ("B" "Book" entry
            (file+datetree "~/org/books.org" "Inbox")
            "* %^{Title}  %^g
@@ -173,36 +179,8 @@ Captured %<%Y-%m-%d %H:%M>
   :PROPERTIES:
   :EMAIL: %(my/org-contacts-template-email)
   :END:")
-           ("n" "Daily note" table-line (file+olp org-agenda-file-gtd "Inbox")
-            "| %u | %^{Note} |"
-            :immediate-finish t)
             ))
-;;      (setq org-capture-templates
-;;            '(("t" "Todo" entry (file+headline org-agenda-file-gtd "Workspace")
-;;               "* TODO [#B] %?\n  %i\n"
-;;               :empty-lines 1)
-;;              ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
-;;               "* %?\n  %i\n %U"
-;;               :empty-lines 1)
-;;              ("b" "Blog Ideas" entry (file+headline org-agenda-file-note "Blog Ideas")
-;;               "* TODO [#B] %?\n  %i\n %U"
-;;               :empty-lines 1)
-;;              ("s" "Code Snippet" entry
-;;               (file org-agenda-file-code-snippet)
-;;               "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
-;;              ("w" "work" entry (file+headline org-agenda-file-gtd "Cocos2D-X")
-;;               "* TODO [#A] %?\n  %i\n %U"
-;;               :empty-lines 1)
-;;              ("c" "Chrome" entry (file+headline org-agenda-file-note "Quick notes")
-;;               "* TODO [#C] %?\n %(zilongshanren/retrieve-chrome-current-tab-url)\n %i\n %U"
-;;               :empty-lines 1)
-;;              ("l" "links" entry (file+headline org-agenda-file-note "Quick notes")
-;;               "* TODO [#C] %?\n  %i\n %a \n %U"
-;;               :empty-lines 1)
-;;              ("j" "Journal Entry"
-;;               entry (file+datetree org-agenda-file-journal)
-;;               "* %?"
-;;               :empty-lines 1)))
+
 
       ;;An entry without a cookie is treated just like priority ' B '.
       ;;So when create new task, they are default

@@ -50,27 +50,6 @@
       (setq org-agenda-window-setup 'current-window)
       (setq org-log-done t)
 
-      ;; 加密文章
-      ;; "http://coldnew.github.io/blog/2013/07/13_5b094.html"
-      ;; org-mode 設定
-      (require 'org-crypt)
-
-      ;; 當被加密的部份要存入硬碟時，自動加密回去
-      (org-crypt-use-before-save-magic)
-
-      ;; 設定要加密的 tag 標籤為 secret
-      (setq org-crypt-tag-matcher "secret")
-
-      ;; 避免 secret 這個 tag 被子項目繼承 造成重複加密
-      ;; (但是子項目還是會被加密喔)
-      (setq org-tags-exclude-from-inheritance (quote ("secret")))
-
-      ;; 用於加密的 GPG 金鑰
-      ;; 可以設定任何 ID 或是設成 nil 來使用對稱式加密 (symmetric encryption)
-      (setq org-crypt-key nil)
-
-      ;; (add-to-list 'auto-mode-alist '("\.org\\'" . org-mode))
-
       (setq org-todo-keywords
             (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d!/!)")
                     (sequence "WAITING(w@/!)" "SOMEDAY(S)" "|" "CANCELLED(c@/!)" "MEETING(m)" "PHONE(p)"))))
@@ -109,77 +88,81 @@
       ;; the %i would copy the selected text into the template
       ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
       ;;add multi-file journal
-  (defun my/org-contacts-template-email (&optional return-value)
-    "Try to return the contact email for a template.
-  If not found return RETURN-VALUE or something that would ask the user."
-    (or (cadr (if (gnus-alive-p)
-                  (gnus-with-article-headers
-                    (mail-extract-address-components
-                     (or (mail-fetch-field "Reply-To") (mail-fetch-field "From") "")))))
-        return-value
-        (concat "%^{" org-contacts-email-property "}p")))
+
+      ;; template related code mainly from sacha's config
+      (defun my/org-contacts-template-email (&optional return-value)
+        "Try to return the contact email for a template.
+      If not found return RETURN-VALUE or something that would ask the user."
+        (or (cadr (if (gnus-alive-p)
+                      (gnus-with-article-headers
+                        (mail-extract-address-components
+                         (or (mail-fetch-field "Reply-To") (mail-fetch-field "From") "")))))
+            return-value
+            (concat "%^{" org-contacts-email-property "}p")))
 
 
-  (defvar my/org-basic-task-template "* TODO %^{Task}
-:PROPERTIES:
-:Effort: %^{effort|1:00|0:05|0:15|0:30|2:00|4:00}
-:END:
-Captured %<%Y-%m-%d %H:%M>
-%?
+      (defvar my/org-basic-task-template "* TODO %^{Task}
+    :PROPERTIES:
+    :Effort: %^{effort|1:00|0:05|0:15|0:30|2:00|4:00}
+    :END:
+    Captured %<%Y-%m-%d %H:%M>
+    %?
 
-%i
-" "Basic task data")
-  (setq org-capture-templates
-        `(("t" "Tasks" entry
-           (file+headline org-agenda-file-gtd "Inbox")
-           ,my/org-basic-task-template
-           :empty-lines 1)
-          ("T" "Quick task" entry
-           (file+headline org-agenda-file-gtd "Inbox")
-           "* TODO %^{Task}\nSCHEDULED: %t\n"
-           :immediate-finish t
-           :empty-lines 1)
-          ("i" "Interrupting task" entry
-           (file+headline org-agenda-file-gtd "Inbox")
-           "* STARTED %^{Task}"
-           :clock-in :clock-resume
-           :empty-lines 1)
-          ("j" "Journal entry" plain
-           (file+datetree org-agenda-file-journal)
-           "%K - %a\n%i\n%?\n"
-           :unnarrowed t)
-          ("J" "Journal entry with date" plain
-           (file+datetree+prompt org-agenda-file-journal)
-           "%K - %a\n%i\n%?\n"
-           :unnarrowed t)
-          ("s" "Journal entry with date, scheduled" entry
-           (file+datetree+prompt org-agenda-file-journal)
-           "* \n%K - %a\n%t\t%i\n%?\n"
-           :unnarrowed t)
-          ("q" "Quick note" item
-           (file+headline org-agenda-file-note "Quick notes"))
-          ("s" "Code Snippet" entry
-           (file org-agenda-file-code-snippet)
-           "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
-          ("B" "Book" entry
-           (file+datetree "~/org/books.org" "Inbox")
-           "* %^{Title}  %^g
-  %i
-  *Author(s):* %^{Author} \\\\
-  *ISBN:* %^{ISBN}
+    %i
+    " "Basic task data")
+      (setq org-capture-templates
+            `(("t" "Tasks" entry
+               (file+headline org-agenda-file-gtd "Inbox")
+               ,my/org-basic-task-template
+               :empty-lines 1)
+              ("T" "Quick task" entry
+               (file+headline org-agenda-file-gtd "Inbox")
+               "* TODO %^{Task}\nSCHEDULED: %t\n"
+               :immediate-finish t
+               :empty-lines 1)
+              ("i" "Interrupting task" entry
+               (file+headline org-agenda-file-gtd "Inbox")
+               "* STARTED %^{Task}"
+               :clock-in :clock-resume
+               :empty-lines 1)
+              ("j" "Journal entry" entry
+               (file+datetree org-agenda-file-journal)
+               "%K - %a\n%i\n%^g\n%?\n"
+               :unnarrowed t)
+              ("J" "Journal entry with date" entry
+               (file+datetree+prompt org-agenda-file-journal)
+               "%K - %a\n%i\n%^g\n%?\n"
+               :unnarrowed t)
+              ("s" "Journal entry with date, scheduled" entry
+               (file+datetree+prompt org-agenda-file-journal)
+               "* \n%K - %a\n%t\t%i\n%?\n"
+               :unnarrowed t)
+              ("q" "Quick note" entry
+               (file+headline org-agenda-file-note "Quick notes")
+               "* %?\n %i\n %U"
+               :empty-lines 1)
+              ("c" "Code Snippet" entry
+               (file org-agenda-file-code-snippet)
+               "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
+              ("B" "Book" entry
+               (file+datetree "~/org/books.org" "Inbox")
+               "* %^{Title}  %^g
+      %i
+      *Author(s):* %^{Author} \\\\
+      *ISBN:* %^{ISBN}
 
-  %?
+      %?
 
-  *Review on:* %^t \\
-  %a
-  %U"
-           :clock-in :clock-resume)
-           ("C" "Contact" entry (file "~/org/contacts.org")
-            "* %(org-contacts-template-name)
-  :PROPERTIES:
-  :EMAIL: %(my/org-contacts-template-email)
-  :END:")
-            ))
+      *Review on:* %^t \\
+      %a
+      %U"
+               :clock-in :clock-resume)
+               ("C" "Contact" entry (file "~/org/contacts.org")
+                "* %(org-contacts-template-name)
+      :PROPERTIES:
+      :EMAIL: %(my/org-contacts-template-email)
+      :END:")
+               ))
 
 
       ;;An entry without a cookie is treated just like priority ' B '.

@@ -127,7 +127,8 @@
                :empty-lines 1)
               ("j" "Journal" entry
                (file+datetree org-agenda-file-journal)
-               "* %^{Brief Description} %^g\n%?\nadded: %U")
+               "* %^{Brief Description} %^g\n%?\nadded: %U"
+               :unnarrowed t)
               ("J" "Journal entry with date" plain
                (file+datetree+prompt org-agenda-file-journal)
                "%K - %a\n%i\n%?\n"

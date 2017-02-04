@@ -125,10 +125,9 @@
                "* STARTED %^{Task}"
                :clock-in :clock-resume
                :empty-lines 1)
-              ("j" "Journal entry" plain
+              ("j" "Journal" entry
                (file+datetree org-agenda-file-journal)
-               "%K - %a\n%i\n%?\n"
-               :unnarrowed t)
+               "* %^{Brief Description} %^g\n%?\nadded: %U")
               ("J" "Journal entry with date" plain
                (file+datetree+prompt org-agenda-file-journal)
                "%K - %a\n%i\n%?\n"
@@ -137,9 +136,9 @@
                (file+datetree+prompt org-agenda-file-journal)
                "* \n%K - %a\n%t\t%i\n%?\n"
                :unnarrowed t)
-              ("n" "Quick note" entry
+              ("n" "Quick Note" entry
                (file+headline org-agenda-file-note "Quick notes")
-               "* %?\n %i\n %U"
+               "* %^{Brief Description} %^g\n%?\nadded: %U"
                :empty-lines 1)
               ("c" "Code Snippet" entry
                (file org-agenda-file-code-snippet)

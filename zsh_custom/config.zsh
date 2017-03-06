@@ -17,6 +17,11 @@ export PATH="/Users/xashes/anaconda3/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+
+# pyenv
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'

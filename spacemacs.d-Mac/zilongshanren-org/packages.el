@@ -19,6 +19,10 @@
     )
 )
 
+;; 自动换行
+(add-hook 'org-mode-hook
+          (lambda () (setq truncate-lines nil)))
+
 ;;In order to export pdf to support Chinese, I should install Latex at here: https://www.tug.org/mactex/
 ;; http://freizl.github.io/posts/2012-04-06-export-orgmode-file-in-Chinese.html
 ;;http://stackoverflow.com/questions/21005885/export-org-mode-code-block-and-result-with-different-styles
@@ -128,7 +132,7 @@
               ("j" "Journal" entry
                (file+datetree org-agenda-file-journal)
                "* %^{Brief Description} %^g\n%?\nadded: %U"
-               :unnarrowed t)
+               )
               ("J" "Journal entry with date" plain
                (file+datetree+prompt org-agenda-file-journal)
                "%K - %a\n%i\n%?\n"

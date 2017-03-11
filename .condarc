@@ -1,0 +1,6 @@
+channels:
+  - anaconda-fusion
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+show_channel_urls: true
+ssl_verify: true

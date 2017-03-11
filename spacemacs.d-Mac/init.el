@@ -35,7 +35,9 @@ values."
      (python :variables
              python-test-runner 'pytest)
      html
+     plantuml
      shell-scripts
+     (shell :variables shell-default-shell 'eshell)
      git
      markdown
      csv
@@ -118,7 +120,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 16
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -275,3 +277,10 @@ you should place your code here."
 ;; auto-generate custom variable definitions.
 (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)
+
+;; Improve faces for company
+(custom-set-faces
+ '(company-tooltip-common
+   ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection
+   ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

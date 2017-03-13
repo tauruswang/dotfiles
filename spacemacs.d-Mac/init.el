@@ -39,7 +39,8 @@ values."
      shell-scripts
      (shell :variables shell-default-shell 'eshell)
      git
-     markdown
+     (markdown :variables
+               markdown-live-preview-engine 'vmd)
      csv
      emoji
      org
@@ -55,7 +56,9 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    spaceline
+                                    )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)

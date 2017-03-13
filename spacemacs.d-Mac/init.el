@@ -34,6 +34,7 @@ values."
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
+     ipython-notebook
      html
      plantuml
      shell-scripts

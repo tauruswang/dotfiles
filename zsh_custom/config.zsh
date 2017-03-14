@@ -22,6 +22,11 @@ export LC_CTYPE=en_US.UTF-8
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
+# virtualenvwrapper
+export WORKON_HOME=$HOME/anaconda3/envs
+export PROJECT_HOME=$HOME/Workspace
+source $HOME/anaconda3/bin/virtualenvwrapper.sh
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'

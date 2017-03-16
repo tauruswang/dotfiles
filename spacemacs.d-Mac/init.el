@@ -36,6 +36,7 @@ values."
              python-test-runner 'pytest)
      ipython-notebook
      html
+     yaml
      plantuml
      shell-scripts
      (shell :variables shell-default-shell 'eshell)
@@ -275,6 +276,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 ;;  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
   (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 16 18)
+  (setenv "WORKON_HOME" "~/anaconda3/envs")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

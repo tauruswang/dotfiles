@@ -35,6 +35,7 @@ values."
      (python :variables
              python-test-runner 'pytest)
      ipython-notebook
+     django
      html
      yaml
      plantuml

@@ -31,11 +31,13 @@ values."
      better-defaults
      (chinese :variables
               chinese-default-input-method 'wubi)
+     dash
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
      ipython-notebook
      django
+     javascript
      html
      yaml
      plantuml
@@ -47,7 +49,6 @@ values."
      csv
      emoji
      org
-     zilongshanren-org
      ibuffer
      spell-checking
      syntax-checking

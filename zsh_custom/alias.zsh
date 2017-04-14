@@ -2,7 +2,7 @@
 alias jpqt='jupyter qtconsole&'
 alias jpnote='jupyter notebook&'
 # Emacs
-alias emacs='emacs&'
+alias emacs='emacs -nw'
 alias ed='emacs --daemon'
 alias et='emacsclient -t'
 alias ec='emacsclient -c &'

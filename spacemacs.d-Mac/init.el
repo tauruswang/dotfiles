@@ -31,12 +31,10 @@ values."
      better-defaults
      (chinese :variables
               chinese-default-input-method 'wubi)
-     dash
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
      ipython-notebook
-     django
      javascript
      html
      yaml
@@ -47,7 +45,6 @@ values."
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      csv
-     emoji
      org
      ibuffer
      spell-checking
@@ -277,8 +274,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 ;;  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
-  (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 16 18)
-  (setenv "WORKON_HOME" "~/anaconda3/envs")
+  ;; (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 16 18)
+  ;; (setenv "WORKON_HOME" "~/anaconda3/envs")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

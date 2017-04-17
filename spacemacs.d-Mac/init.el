@@ -47,7 +47,6 @@ values."
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      csv
-     emoji
      org
      ibuffer
      spell-checking

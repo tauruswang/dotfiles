@@ -30,8 +30,7 @@ values."
                       auto-completion-enable-sort-by-usage t)
      better-defaults
      (chinese :variables
-              chinese-default-input-method 'wubi
-              chinese-enable-fcitx t)
+              chinese-default-input-method 'wubi)
      dash
      emacs-lisp
      (python :variables

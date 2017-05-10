@@ -279,7 +279,7 @@ you should place your code here."
   (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 16 18)
   (setenv "WORKON_HOME" "~/anaconda3/envs")
   (setq web-mode-engines-alist
-        '(("jinja2" . "\\.html\\'")))
+        '(("django" . "\\.html\\'")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

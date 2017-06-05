@@ -10,6 +10,8 @@ alias ec='emacsclient -c &'
 # Thefuck
 # alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 # alias FUCK='fuck'
+eval $(thefuck --alias)
+eval $(thefuck --alias FUCK)
 
 
 # Linux only

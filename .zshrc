@@ -54,7 +54,7 @@ ZSH_THEME="xxf"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-nvm git osx)
+plugins=(zsh-nvm git osx autojump)
 
 source $ZSH/oh-my-zsh.sh
 

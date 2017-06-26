@@ -30,7 +30,8 @@
 ;;; Code:
 
 (defconst org-private-packages
-  '()
+  '(
+    )
   "The list of Lisp packages required by the org-private layer.
 
 Each entry is either:

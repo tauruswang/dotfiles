@@ -47,7 +47,11 @@ values."
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      csv
-     org
+     (org :variables
+          org-enable-github-support t
+          org-enable-bootstrap-support t
+          org-projectile-file "TODOs.org")
+     org-private
      ibuffer
      spell-checking
      syntax-checking

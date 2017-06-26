@@ -29,7 +29,7 @@
 
   ;; Derive my agenda from org-index-file, where all my todos are in.
   (setq org-agenda-files (list
-                          org-index-file))
+                          org-directory))
 
   ;; Hitting 'C-c C-x C-s' will mark a todo as done and move it to an appropriate
   ;; place in the archive
@@ -112,4 +112,9 @@
   (setq org-refile-use-outline-path 'file)
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-allow-creating-parent-nodes 'confirm)
+
+  ;; 自动换行
+  (add-hook 'org-mode-hook
+            (lambda () (setq truncate-lines nil)))
+
   )

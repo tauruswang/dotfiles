@@ -78,14 +78,24 @@
           ("j" "Journal"
            entry
            (file+datetree (org-file-path "journal.org"))
-           "* %^{Brief Description} %^g\n%?\nadded: %U")
+           "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("n" "Note"
            entry
            (file (org-file-path "note.org"))
-           "* %^{Brief Description} %^g\n%?\nadded: %U")
+           "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
-          ("s" "Subscribe to an RSS feed"
+          ("t" "Trade"
+           entry
+           (file+headline (org-file-path "trade.org") "Inbox")
+           "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
+
+          ("p" "Poker"
+           entry
+           (file+headline (org-file-path "poker.org") "Inbox")
+           "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
+
+          ("r" "Subscribe to an RSS feed"
            plain
            (file "~/org/rss/urls")
            "%^{Feed URL} \"~%^{Feed name}\"")
@@ -94,10 +104,10 @@
            (file (org-file-path "snippet.org"))
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
 
-          ("t" "Todo"
+          ("i" "Index"
            entry
            (file+headline org-index-file "Inbox")
-           "* TODO %?\n")))
+           "* TODO %?\n\tCaptured %U")))
 
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
@@ -113,4 +123,31 @@
   (add-hook 'org-mode-hook
             (lambda () (setq truncate-lines nil)))
 
+  ;; Publish
+  (setq org-publish-project-alist
+        '(("orgfiles"
+            :base-directory "~/org/"
+            :base-extension "org"
+            :publishing-directory "~/Dropbox/org_publish/"
+            :publishing-function org-html-publish-to-html
+            :exclude "login.org"   ;; regexp
+            :headline-levels 3
+            :section-numbers nil
+            :with-toc nil
+            :auto-sitemap t
+            :sitemap-title "Sitemap"
+            :html-preamble t)
+
+          ("images"
+            :base-directory "~/org/images/"
+            :base-extension "jpg\\|gif\\|png"
+            :publishing-directory "~/Dropbox/org_publish/images/"
+            :publishing-function org-publish-attachment)
+
+          ("other"
+            :base-directory "~/org/other/"
+            :base-extension "css\\|el\\|setup"
+            :publishing-directory "~/Dropbox/org_publish/other/"
+            :publishing-function org-publish-attachment)
+          ("website" :components ("orgfiles" "images" "other"))))
   )

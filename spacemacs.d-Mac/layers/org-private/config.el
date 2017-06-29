@@ -85,10 +85,6 @@
            (file (org-file-path "note.org"))
            "* %^{Brief Description} %^g\n%?\nadded: %U")
 
-          ("r" "Reading"
-           checkitem
-           (file (org-file-path "to-read.org")))
-
           ("s" "Subscribe to an RSS feed"
            plain
            (file "~/org/rss/urls")

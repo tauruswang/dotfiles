@@ -42,7 +42,11 @@ values."
      yaml
      plantuml
      shell-scripts
-     (shell :variables shell-default-shell 'eshell)
+     (shell :variables
+            shell-default-shell 'term
+            shell-default-height 40
+            shell-default-full-span nil
+            )
      git
      (markdown :variables
                markdown-live-preview-engine 'vmd)

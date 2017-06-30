@@ -10,8 +10,8 @@
   (setq org-src-window-setup 'current-window)
   ;; Quickly insert a block of elisp or python:
   (add-to-list 'org-structure-template-alist
-               '("el" "#+BEGIN-SRC emacs-lisp\n?\n#+END_SRC")
-               '("py" "#+BEGIN-SRC python\n?\n#+END_SRC")
+               '(("el" "#+BEGIN_SRC elisp\n?\n#+END_SRC")
+                 ("py" "#+BEGIN_SRC python\n?\n#+END_SRC"))
                )
 
 

@@ -10,8 +10,7 @@
   (setq org-src-window-setup 'current-window)
   ;; Quickly insert a block of elisp or python:
   (add-to-list 'org-structure-template-alist
-               '(("el" "#+BEGIN_SRC elisp\n?\n#+END_SRC")
-                 ("py" "#+BEGIN_SRC python\n?\n#+END_SRC"))
+               '("el" "#+BEGIN_SRC elisp\n?\n#+END_SRC")
                )
 
 
@@ -122,6 +121,9 @@
   ;; 自动换行
   (add-hook 'org-mode-hook
             (lambda () (setq truncate-lines nil)))
+
+  ;; log
+  (setq org-log-into-drawer t)
 
   ;; Publish
   (setq org-publish-project-alist

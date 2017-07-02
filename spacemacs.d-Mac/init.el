@@ -287,6 +287,7 @@ you should place your code here."
   (setenv "WORKON_HOME" "~/anaconda3/envs")
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))
+  (setq powerline-default-separator "arrow")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -40,19 +40,6 @@
 
   (define-key org-mode-map (kbd "C-c C-x C-s") 'hrs/mark-done-and-archive)
 
-  ;; Set todo-keywords
-  (setq org-todo-keywords
-        '((sequence
-           "TODO(t)"
-           "STARTED(s)"
-           "WAITING(w@/!)"
-           "|" "DONE(x!)" "CANCELLED(c@)")))
-
-  (setq org-todo-keyword-faces
-        '(
-          ("WAITING" . (:foreground "red" :weight bold))
-          ("STARTED" . (:foreground "green" :weight bold))))
-
   ;; Capturing tasks
   (setq org-capture-templates
         '(("b" "Blog idea"
@@ -124,6 +111,9 @@
 
   ;; log
   (setq org-log-into-drawer t)
+
+  ;; clock
+  (setq spaceline-org-clock-p t)
 
   ;; Publish
   (setq org-publish-project-alist

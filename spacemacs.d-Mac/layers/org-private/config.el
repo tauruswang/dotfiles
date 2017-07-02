@@ -42,19 +42,11 @@
 
   ;; Capturing tasks
   (setq org-capture-templates
-        '(("b" "Blog idea"
-           entry
-           (file (org-file-path "blog-ideas.org"))
-           "* TODO %?\n")
-
+        '(
           ("f" "Finished book"
            table-line
            (file (org-file-path "books-read.org"))
            "| %^{Title} | %^{Author} | %u |")
-
-          ("g" "Groceries"
-           checkitem
-           (file (org-file-path "groceries.org")))
 
           ("l" "Today I Learned..."
            entry
@@ -93,7 +85,7 @@
           ("i" "Index"
            entry
            (file+headline org-index-file "Inbox")
-           "* TODO %?\n\tCaptured %U")))
+           "* %?\n\tCaptured %U")))
 
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
 

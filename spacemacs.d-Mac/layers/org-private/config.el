@@ -63,15 +63,9 @@
            (file (org-file-path "note.org"))
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
-          ("t" "Trade"
-           entry
-           (file+headline (org-file-path "trade.org") "Inbox")
-           "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
-
-          ("p" "Poker"
-           entry
-           (file+headline (org-file-path "poker.org") "Inbox")
-           "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
+          ("p" "Daily Plan"
+           checklist
+           (file+datetree (org-file-path "dailyplan.org")))
 
           ("r" "Subscribe to an RSS feed"
            plain

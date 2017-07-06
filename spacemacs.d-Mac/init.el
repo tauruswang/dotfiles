@@ -31,7 +31,6 @@ values."
      better-defaults
      (chinese :variables
               chinese-default-input-method 'wubi)
-     dash
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)

@@ -25,8 +25,6 @@
     )
 
   (setq org-index-file (org-file-path "index.org"))
-  (setq org-archive-location
-        (concat (org-file-path "archive.org") "::* From %s"))
 
   ;; Derive my agenda from org-index-file, where all my todos are in.
   (setq org-agenda-files (list

@@ -10,9 +10,11 @@
   (setq org-src-window-setup 'current-window)
   ;; Quickly insert a block of elisp or python:
   (add-to-list 'org-structure-template-alist
-               '("el" "#+BEGIN_SRC elisp\n?\n#+END_SRC")
-               )
-
+               '("el" "#+BEGIN_SRC elisp\n?\n#+END_SRC"))
+  (add-to-list 'org-structure-template-alist
+               '("week" "#+BEGIN: clocktable :maxlevel 2 :scope agenda-with-archives :block thisweek :formula % :link t :fileskip0\n#+END:"))
+  (add-to-list 'org-structure-template-alist
+               '("today" "#+BEGIN: clocktable :maxlevel 2 :scope agenda-with-archives :block today :formula % :link t :fileskip0\n#+END:"))
 
   ;; Task and org-capture management
   (setq org-directory "~/org")
@@ -90,6 +92,17 @@
   (setq org-refile-use-outline-path 'file)
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-allow-creating-parent-nodes 'confirm)
+
+  ;; custom agenda view
+  (setq org-agenda-custom-commands
+        '(("i" "Tasks Focus Now"
+           ((agenda "")
+            (tags "URGENT")
+            (todo "NEXT")))
+          ("o" "Agenda and Office-related tasks"
+           ((agenda "")
+            (todo "work")
+            (tags "office")))))
 
   ;; 自动换行
   (add-hook 'org-mode-hook

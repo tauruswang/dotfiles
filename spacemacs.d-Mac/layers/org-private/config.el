@@ -30,16 +30,6 @@
   (setq org-agenda-files (list
                           org-directory))
 
-  ;; Hitting 'C-c C-x C-s' will mark a todo as done and move it to an appropriate
-  ;; place in the archive
-  (defun hrs/mark-done-and-archive ()
-    "Mark the state of an org-mode item as DONE and archive it."
-    (interactive)
-    (org-todo 'done)
-    (org-archive-subtree))
-
-  (define-key org-mode-map (kbd "C-c C-x C-s") 'hrs/mark-done-and-archive)
-
   ;; Capturing tasks
   (setq org-capture-templates
         '(
@@ -63,9 +53,10 @@
            (file (org-file-path "note.org"))
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
-          ("p" "Daily Plan"
-           checklist
-           (file+datetree (org-file-path "dailyplan.org")))
+          ("d" "Daily Plan & Review"
+           entry
+           (file+datetree (org-file-path "dailyplan.org"))
+           "* %?\n")
 
           ("r" "Subscribe to an RSS feed"
            plain

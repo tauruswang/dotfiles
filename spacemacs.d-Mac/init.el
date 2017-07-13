@@ -56,7 +56,10 @@ values."
           org-projectile-file "TODOs.org")
      org-private
      ibuffer
-     spell-checking
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil
+                     spell-checking-enable-auto-dictionary t
+                     enable-flyspell-auto-completion t)
      syntax-checking
      (semantic :disabled-for emacs-lisp)
      themes-megapack
@@ -131,7 +134,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 20
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -282,7 +285,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 ;;  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
-  (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 20 24)
+  (spacemacs//set-monospaced-font   "Source Code Pro" "Hiragino Sans GB" 18 20)
   (setenv "WORKON_HOME" "~/anaconda3/envs")
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))

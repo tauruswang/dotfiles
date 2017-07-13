@@ -87,7 +87,8 @@
         '(("i" "Tasks Focus Now"
            ((agenda "")
             (tags "URGENT")
-            (todo "NEXT")))
+            (todo "NEXT")
+            (todo "SHORT")))
           ("o" "Agenda and Office-related tasks"
            ((agenda "")
             (todo "work")

@@ -17,7 +17,7 @@
                '("today" "#+BEGIN: clocktable :maxlevel 2 :scope agenda-with-archives :block today :formula % :link t :fileskip0\n#+END:"))
 
   ;; Task and org-capture management
-  (setq org-directory "~/org")
+  (setq org-directory "~/ownCloud/org")
 
   (defun org-file-path (filename)
     "Return the absolute address of an org file, given its relative name."
@@ -60,7 +60,7 @@
 
           ("r" "Subscribe to an RSS feed"
            plain
-           (file "~/org/rss/urls")
+           (file "~/ownCloud/org/rss/urls")
            "%^{Feed URL} \"~%^{Feed name}\"")
 
           ("c" "Code Snippet" entry
@@ -107,7 +107,7 @@
   ;; Publish
   (setq org-publish-project-alist
         '(("orgfiles"
-            :base-directory "~/org/"
+            :base-directory "~/ownCloud/org/"
             :base-extension "org"
             :publishing-directory "~/Dropbox/org_publish/"
             :publishing-function org-html-publish-to-html
@@ -120,13 +120,13 @@
             :html-preamble t)
 
           ("images"
-            :base-directory "~/org/images/"
+            :base-directory "~/ownCloud/org/images/"
             :base-extension "jpg\\|gif\\|png"
             :publishing-directory "~/Dropbox/org_publish/images/"
             :publishing-function org-publish-attachment)
 
           ("other"
-            :base-directory "~/org/other/"
+            :base-directory "~/ownCloud/org/other/"
             :base-extension "css\\|el\\|setup"
             :publishing-directory "~/Dropbox/org_publish/other/"
             :publishing-function org-publish-attachment)

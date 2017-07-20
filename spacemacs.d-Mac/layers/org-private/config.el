@@ -18,13 +18,14 @@
 
   ;; Task and org-capture management
   (setq org-directory "~/ownCloud/org")
+  (setq org-note-directory "~/ownCloud/org/notes")
 
-  (defun org-file-path (filename)
+  (defun org-file-path (directory filename)
     "Return the absolute address of an org file, given its relative name."
-    (concat (file-name-as-directory org-directory) filename)
+    (concat (file-name-as-directory directory) filename)
     )
 
-  (setq org-index-file (org-file-path "index.org"))
+  (setq org-index-file (org-file-path org-directory "index.org"))
 
   ;; Derive my agenda from org-index-file, where all my todos are in.
   (setq org-agenda-files (list
@@ -35,27 +36,27 @@
         '(
           ("f" "Finished book"
            table-line
-           (file (org-file-path "books-read.org"))
+           (file (org-file-path org-directory "books-read.org"))
            "| %^{Title} | %^{Author} | %u |")
 
           ("l" "Today I Learned..."
            entry
-           (file+datetree (org-file-path "til.org"))
+           (file+datetree (org-file-path org-note-directory "til.org"))
            "* %?\n")
 
           ("j" "Journal"
            entry
-           (file+datetree (org-file-path "journal.org"))
+           (file+datetree (org-file-path org-note-directory "journal.org"))
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("n" "Note"
            entry
-           (file (org-file-path "note.org"))
+           (file (org-file-path org-note-directory "note.org"))
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("d" "Daily Plan & Review"
            entry
-           (file+datetree (org-file-path "dailyplan.org"))
+           (file+datetree (org-file-path org-directory "dailyplan.org"))
            "* %?\n")
 
           ("r" "Subscribe to an RSS feed"
@@ -64,7 +65,7 @@
            "%^{Feed URL} \"~%^{Feed name}\"")
 
           ("c" "Code Snippet" entry
-           (file (org-file-path "snippet.org"))
+           (file (org-file-path org-note-directory "snippet.org"))
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
 
           ("i" "Index"

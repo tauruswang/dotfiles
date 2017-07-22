@@ -105,6 +105,9 @@
   ;; clock
   (setq spaceline-org-clock-p t)
 
+  ;; Not show further repetitions
+  (setq org-agenda-repeating-timestamp-show-all nil)
+
   ;; Publish
   (setq org-publish-project-alist
         '(("orgfiles"

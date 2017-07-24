@@ -38,6 +38,8 @@ values."
      django
      javascript
      html
+     (latex :variables
+            latex-enable-folding t)
      yaml
      plantuml
      shell-scripts

@@ -5,6 +5,8 @@
 
 # add Anaconda3 2.1.0 path by xashes (2015-02-08)
 export PATH="$HOME/anaconda3/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 # add racket path by xashes
 # export PATH="/Applications/Racket v6.1.1/bin:$PATH"

@@ -41,22 +41,22 @@
 
           ("l" "Today I Learned..."
            entry
-           (file+datetree (org-file-path org-note-directory "til.org"))
+           (file+olp+datetree "~/ownCloud/org/notes/til.org")
            "* %?\n")
 
           ("j" "Journal"
            entry
-           (file+datetree (org-file-path org-note-directory "journal.org"))
+           (file+olp+datetree "~/ownCloud/org/notes/journal.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("n" "Note"
            entry
-           (file (org-file-path org-note-directory "note.org"))
+           (file "~/ownCloud/org/notes/note.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("d" "Daily Plan & Review"
            entry
-           (file+datetree (org-file-path org-directory "dailyplan.org"))
+           (file+olp+datetree "~/ownCloud/org/notes/dailyplan.org")
            "* %?\n")
 
           ("r" "Subscribe to an RSS feed"
@@ -65,13 +65,13 @@
            "%^{Feed URL} \"~%^{Feed name}\"")
 
           ("c" "Code Snippet" entry
-           (file (org-file-path org-note-directory "snippet.org"))
+           (file "~/ownCloud/org/notes/snippet.org")
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
 
           ("i" "Index"
            entry
            (file+headline org-index-file "Inbox")
-           "* %?\n\tCaptured %U")))
+           "* %?\n\tCaptured %U\n \t%a")))
 
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
 

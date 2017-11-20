@@ -75,7 +75,7 @@
 
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
-  ;; Reliling
+  ;; Refiling
   (setq org-refile-targets (quote ((nil :maxlevel . 3)
                                    (org-agenda-files :maxlevel . 3))))
 

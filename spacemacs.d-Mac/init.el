@@ -46,13 +46,12 @@ This function should only modify configuration layer settings."
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
-     ipython-notebook
      django
      javascript
      html
      helm
-     (latex :variables
-            latex-enable-folding t)
+     ;; (latex :variables
+            ;; latex-enable-folding t)
      yaml
      shell-scripts
      (shell :variables

@@ -54,7 +54,6 @@ This function should only modify configuration layer settings."
      (latex :variables
             latex-enable-folding t)
      yaml
-     plantuml
      shell-scripts
      (shell :variables
             shell-default-shell 'term
@@ -66,6 +65,15 @@ This function should only modify configuration layer settings."
                markdown-live-preview-engine 'vmd)
      csv
      (org :variables
+          org-enable-reveal-js-support t
+          org-enable-org-journal-support t
+          org-journal-dir "~/ownCloud/org/journal/"
+          org-journal-file-format "%Y-%m-%d"
+          org-journal-date-prefix "#+TITLE: "
+          org-journal-date-format "%A, %B %d %Y"
+          org-journal-time-prefix "* "
+          org-journal-time-format ""
+          org-enable-hugo-support t
           org-enable-github-support t
           org-enable-bootstrap-support t
           org-projectile-file "TODOs.org")

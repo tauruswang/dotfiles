@@ -68,6 +68,9 @@
            (file "~/ownCloud/org/notes/snippet.org")
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
 
+          ("b" "Brain" plain (function org-brain-goto-end)
+           "* %i%?" :empty-lines 1)
+
           ("i" "Index"
            entry
            (file+headline org-index-file "Inbox")

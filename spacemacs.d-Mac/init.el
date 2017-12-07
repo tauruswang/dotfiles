@@ -70,6 +70,7 @@ This function should only modify configuration layer settings."
           org-enable-bootstrap-support t
           org-projectile-file "TODOs.org")
      org-private
+     plantuml
      ibuffer
      (spell-checking :variables
                      spell-checking-enable-by-default nil
@@ -403,6 +404,8 @@ you should place your code here."
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))
   (setq powerline-default-separator "arrow")
+  (setq-default browse-url-browser-function 'browse-url-generic
+                browse-url-generic-program "google-chrome")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

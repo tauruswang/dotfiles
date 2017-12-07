@@ -20,6 +20,9 @@
   (setq org-directory "~/ownCloud/org")
   (setq org-note-directory "~/ownCloud/org/notes")
 
+  (setq org-plantuml-jar-path
+        (expand-file-name "~/plantuml.jar"))
+
   (defun org-file-path (directory filename)
     "Return the absolute address of an org file, given its relative name."
     (concat (file-name-as-directory directory) filename)

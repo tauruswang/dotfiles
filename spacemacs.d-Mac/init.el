@@ -404,8 +404,16 @@ you should place your code here."
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))
   (setq powerline-default-separator "arrow")
-  (setq-default browse-url-browser-function 'browse-url-generic
-                browse-url-generic-program "google-chrome")
+  (cond
+   ((string-equal system-type "darwin")
+    (setq browse-url-browser-function 'browse-url-generic
+          browse-url-generic-program "google-chrome")
+    )
+   ((string-equal system-type "gnu/linux")
+    (setq browse-url-browser-function 'browse-url-generic
+          browse-url-generic-program "google-chrome-stable")
+    )
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

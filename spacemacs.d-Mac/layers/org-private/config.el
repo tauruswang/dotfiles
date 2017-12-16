@@ -19,6 +19,7 @@
   ;; Task and org-capture management
   (setq org-directory "~/ownCloud/org")
   (setq org-note-directory "~/ownCloud/org/notes")
+  (setq org-brain-path "~/ownCloud/org/brain")
 
   (setq org-plantuml-jar-path
         (expand-file-name "~/plantuml.jar"))

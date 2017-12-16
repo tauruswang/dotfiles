@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
+     ipython-notebook
      django
      javascript
      html
@@ -411,7 +412,7 @@ you should place your code here."
     )
    ((string-equal system-type "gnu/linux")
     (setq browse-url-browser-function 'browse-url-generic
-          browse-url-generic-program "chromium")
+          browse-url-generic-program "google-chrome-stable")
     )
    )
   )

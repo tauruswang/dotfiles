@@ -51,7 +51,8 @@ This function should only modify configuration layer settings."
      javascript
      html
      helm
-     dash
+     (dash :variables
+           helm-dash-docset-newpath "~/ownCloud/.docsets")
      ;; (latex :variables
             ;; latex-enable-folding t)
      yaml

@@ -51,6 +51,7 @@ This function should only modify configuration layer settings."
      javascript
      html
      helm
+     dash
      ;; (latex :variables
             ;; latex-enable-folding t)
      yaml

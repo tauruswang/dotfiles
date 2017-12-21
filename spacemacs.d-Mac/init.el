@@ -53,8 +53,11 @@ This function should only modify configuration layer settings."
      helm
      (dash :variables
            helm-dash-docset-newpath "~/ownCloud/.docsets")
-     ;; (latex :variables
-            ;; latex-enable-folding t)
+     (latex :variables
+            latex-build-command "LaTeX"
+            latex-enable-auto-fill t
+            latex-enable-magic t
+            latex-enable-folding t)
      yaml
      shell-scripts
      (shell :variables
@@ -407,6 +410,7 @@ you should place your code here."
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))
   (setq powerline-default-separator "arrow")
+
   (cond
    ((string-equal system-type "darwin")
     (setq browse-url-browser-function 'browse-url-generic
@@ -417,6 +421,9 @@ you should place your code here."
           browse-url-generic-program "chromium")
     )
    )
+
+  (add-hook 'doc-view-minor-mode-hook 'auto-revert-mode)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

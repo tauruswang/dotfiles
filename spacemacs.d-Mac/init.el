@@ -46,19 +46,18 @@ This function should only modify configuration layer settings."
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
-     ipython-notebook
      django
      javascript
      html
      helm
      (dash :variables
            helm-dash-docset-newpath "~/ownCloud/.docsets")
-     (latex :variables
-            latex-build-command "LaTeX"
-            latex-enable-auto-fill t
-            latex-enable-magic t
-            latex-enable-folding t)
-     yaml
+     ;; (latex :variables
+     ;;        latex-build-command "LaTeX"
+     ;;        latex-enable-auto-fill t
+     ;;        latex-enable-magic t
+     ;;        latex-enable-folding t)
+     ;; yaml
      shell-scripts
      (shell :variables
             shell-default-shell 'term

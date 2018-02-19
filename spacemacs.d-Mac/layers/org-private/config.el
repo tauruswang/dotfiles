@@ -53,6 +53,11 @@
            (file+olp+datetree "~/ownCloud/org/notes/journal.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
+          ("t" "Trade Journal"
+           entry
+           (file+olp+datetree "~/ownCloud/org/notes/trade_journal.org")
+           "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
+
           ("n" "Note"
            entry
            (file "~/ownCloud/org/notes/note.org")

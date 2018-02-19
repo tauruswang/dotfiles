@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
+     ruby
      django
      javascript
      html

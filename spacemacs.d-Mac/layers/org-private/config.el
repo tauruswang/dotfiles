@@ -18,7 +18,6 @@
 
   ;; Task and org-capture management
   (setq org-directory "~/ownCloud/org")
-  (setq org-note-directory "~/ownCloud/org/notes")
   (setq org-brain-path "~/ownCloud/org/brain")
 
   (setq org-plantuml-jar-path
@@ -32,8 +31,7 @@
   (setq org-index-file (org-file-path org-directory "index.org"))
 
   ;; Derive my agenda from org-index-file, where all my todos are in.
-  (setq org-agenda-files (list
-                          org-directory))
+  (setq org-agenda-files org-index-file)
 
   ;; Capturing tasks
   (setq org-capture-templates
@@ -45,27 +43,27 @@
 
           ("l" "Today I Learned..."
            entry
-           (file+olp+datetree "~/ownCloud/org/notes/til.org")
+           (file+olp+datetree "~/ownCloud/org/til.org")
            "* %?\n")
 
           ("j" "Journal"
            entry
-           (file+olp+datetree "~/ownCloud/org/notes/journal.org")
+           (file+olp+datetree "~/ownCloud/org/journal.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("t" "Trade Journal"
            entry
-           (file+olp+datetree "~/ownCloud/org/notes/trade_journal.org")
+           (file+olp+datetree "~/ownCloud/org/trade_journal.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("n" "Note"
            entry
-           (file "~/ownCloud/org/notes/note.org")
+           (file "~/ownCloud/org/note.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("d" "Daily Plan & Review"
            entry
-           (file+olp+datetree "~/ownCloud/org/notes/dailyplan.org")
+           (file+olp+datetree "~/ownCloud/org/dailyplan.org")
            "* %?\n")
 
           ("r" "Subscribe to an RSS feed"
@@ -74,15 +72,15 @@
            "%^{Feed URL} \"~%^{Feed name}\"")
 
           ("c" "Code Snippet" entry
-           (file "~/ownCloud/org/notes/snippet.org")
+           (file "~/ownCloud/org/snippet.org")
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
 
           ("b" "Brain" plain (function org-brain-goto-end)
            "* %i%?" :empty-lines 1)
 
-          ("i" "Index"
+          ("g" "GTD"
            entry
-           (file+headline org-index-file "Inbox")
+           (file+headline "~/ownCloud/org/gtd.org" "Inbox")
            "* %?\n\tCaptured %U\n \t%a")))
 
   (add-hook 'org-capture-mode-hook 'evil-insert-state)

@@ -123,7 +123,7 @@
         '(("orgfiles"
             :base-directory "~/ownCloud/org/"
             :base-extension "org"
-            :publishing-directory "~/Dropbox/org_publish/"
+            :publishing-directory "~/localData/org_publish/"
             :publishing-function org-html-publish-to-html
             :exclude "login.org"   ;; regexp
             :headline-levels 3
@@ -136,13 +136,13 @@
           ("images"
             :base-directory "~/ownCloud/org/images/"
             :base-extension "jpg\\|gif\\|png"
-            :publishing-directory "~/Dropbox/org_publish/images/"
+            :publishing-directory "~/localData/org_publish/images/"
             :publishing-function org-publish-attachment)
 
           ("other"
             :base-directory "~/ownCloud/org/other/"
             :base-extension "css\\|el\\|setup"
-            :publishing-directory "~/Dropbox/org_publish/other/"
+            :publishing-directory "~/localData/org_publish/other/"
             :publishing-function org-publish-attachment)
           ("website" :components ("orgfiles" "images" "other"))))
   )

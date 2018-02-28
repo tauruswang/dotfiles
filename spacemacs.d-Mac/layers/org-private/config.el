@@ -12,7 +12,9 @@
   (add-to-list 'org-structure-template-alist
                '("el" "#+BEGIN_SRC elisp\n?\n#+END_SRC"))
   (add-to-list 'org-structure-template-alist
-               '("week" "#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block thisweek :formula % :link t :fileskip0\n#+END:"))
+               '("month" "#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block lastmonth :formula % :link t :fileskip0\n#+END:"))
+  (add-to-list 'org-structure-template-alist
+               '("week" "#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block lastweek :wstart 7 :formula % :link t :fileskip0\n#+END:"))
   (add-to-list 'org-structure-template-alist
                '("today" "#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block today :formula % :link t :fileskip0\n#+END:"))
   (add-to-list 'org-structure-template-alist

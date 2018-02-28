@@ -65,7 +65,7 @@
 
           ("d" "Daily Plan & Review"
            entry
-           (file+olp+datetree "~/ownCloud/org/dailytrack.org")
+           (file+olp+datetree "~/ownCloud/org/gtd.org" "Plan and Review")
            "* %?\n")
 
           ("r" "Subscribe to an RSS feed"

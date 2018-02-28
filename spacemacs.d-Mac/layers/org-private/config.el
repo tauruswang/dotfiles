@@ -63,7 +63,7 @@
 
           ("d" "Daily Plan & Review"
            entry
-           (file+olp+datetree "~/ownCloud/org/dailyplan.org")
+           (file+olp+datetree "~/ownCloud/org/dailytrack.org")
            "* %?\n")
 
           ("r" "Subscribe to an RSS feed"
@@ -99,7 +99,7 @@
            ((agenda "")
             (tags "URGENT")
             (todo "NEXT")
-            (todo "SHORT")))
+            (todo "DOING")))
           ("o" "Agenda and Office-related tasks"
            ((agenda "")
             (todo "work")

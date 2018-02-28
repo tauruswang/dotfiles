@@ -12,9 +12,11 @@
   (add-to-list 'org-structure-template-alist
                '("el" "#+BEGIN_SRC elisp\n?\n#+END_SRC"))
   (add-to-list 'org-structure-template-alist
-               '("week" "#+BEGIN: clocktable :maxlevel 2 :scope agenda-with-archives :block thisweek :formula % :link t :fileskip0\n#+END:"))
+               '("week" "#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block thisweek :formula % :link t :fileskip0\n#+END:"))
   (add-to-list 'org-structure-template-alist
-               '("today" "#+BEGIN: clocktable :maxlevel 2 :scope agenda-with-archives :block today :formula % :link t :fileskip0\n#+END:"))
+               '("today" "#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block today :formula % :link t :fileskip0\n#+END:"))
+  (add-to-list 'org-structure-template-alist
+               '("title" "#+TITLE: ?\n#+SETUPFILE: ./other/theme-bigblow.setup\n#+STARTUP: lognotereschedule\n\n\n"))
 
   ;; Task and org-capture management
   (setq org-directory "~/ownCloud/org")

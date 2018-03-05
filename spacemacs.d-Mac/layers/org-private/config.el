@@ -18,7 +18,7 @@
   (add-to-list 'org-structure-template-alist
                '("today" "#+BEGIN: clocktable :maxlevel 3 :scope agenda-with-archives :block today :formula % :link t :fileskip0\n#+END:"))
   (add-to-list 'org-structure-template-alist
-               '("title" "#+TITLE: ?\n#+SETUPFILE: ./other/theme-bigblow.setup\n#+STARTUP: lognotereschedule\n\n\n"))
+               '("title" "#+TITLE: ?\n#+SETUPFILE: ./other/theme-bigblow.setup\n#+STARTUP: lognotereschedule\n\n"))
 
   ;; Task and org-capture management
   (setq org-directory "~/ownCloud/org")

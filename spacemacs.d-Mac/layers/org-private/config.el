@@ -40,11 +40,6 @@
   ;; Capturing tasks
   (setq org-capture-templates
         '(
-          ("f" "Finished book"
-           table-line
-           (file (org-file-path org-directory "books-read.org"))
-           "| %^{Title} | %^{Author} | %u |")
-
           ("l" "Today I Learned..."
            entry
            (file+olp+datetree "~/ownCloud/org/til.org")
@@ -65,15 +60,10 @@
            (file "~/ownCloud/org/note.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
-          ("d" "Daily Plan & Review"
+          ("r" "Review"
            entry
-           (file+olp+datetree "~/ownCloud/org/gtd.org" "Plan and Review")
+           (file+olp+datetree "~/ownCloud/org/review.org")
            "* %?\n")
-
-          ("r" "Subscribe to an RSS feed"
-           plain
-           (file "~/ownCloud/org/rss/urls")
-           "%^{Feed URL} \"~%^{Feed name}\"")
 
           ("c" "Code Snippet" entry
            (file "~/ownCloud/org/snippet.org")

@@ -1,6 +1,6 @@
 # Python tools - added at 2015-02-10
 alias jpqt='jupyter qtconsole&'
-alias jpnote='jupyter notebook&'
+alias jpnote='jupyter notebook'
 # Emacs
 alias emacs='emacs&'
 alias ed='emacs --daemon'

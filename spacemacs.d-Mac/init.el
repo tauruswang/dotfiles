@@ -41,10 +41,10 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      osx
      (auto-completion :variables
-                      auto-completion-return-key-behavior nil
-                      auto-completion-complete-with-key-sequence "jk"
+                      auto-completion-return-key-behavior 'complete
+                      ;; auto-completion-complete-with-key-sequence "jk"
                       auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-help-tooltip 'manual
+                      ;; auto-completion-enable-help-tooltip 'manual
                       auto-completion-enable-sort-by-usage t)
      better-defaults
      (chinese :variables
@@ -497,8 +497,7 @@ you should place your code here."
 
   (cond
    ((string-equal system-type "darwin")
-    (setq browse-url-browser-function 'browse-url-generic
-          browse-url-generic-program "google-chrome")
+    (setq browse-url-browser-function 'browse-url-default-macosx-browser)
     )
    ((string-equal system-type "gnu/linux")
     (setq browse-url-browser-function 'browse-url-generic

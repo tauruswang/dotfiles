@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
                       auto-completion-return-key-behavior 'complete
                       ;; auto-completion-complete-with-key-sequence "jk"
                       auto-completion-enable-snippets-in-popup t
-                      ;; auto-completion-enable-help-tooltip 'manual
+                      auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
      better-defaults
      (chinese :variables

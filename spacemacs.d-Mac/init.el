@@ -221,8 +221,8 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Ubuntu Mono"
-                               :size 20
+   dotspacemacs-default-font '("Space Mono"
+                               :size 18
                                :weight normal
                                :width normal)
 
@@ -355,7 +355,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
@@ -374,7 +374,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-show-transient-state-color-guide t
 
    ;; If non-nil unicode symbols are displayed in the mode line. (default t)
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
 
    ;; If non-nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
@@ -489,7 +489,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 ;;  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
-;;  (spacemacs//set-monospaced-font   "Ubuntu Mono" "Ubuntu Mono" 18 18)
+;;  (spacemacs//set-monospaced-font   "Space Mono" "WenQuanYi Micro Hei" 18 20)
   (setenv "WORKON_HOME" "~/anaconda3/envs")
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))

@@ -48,7 +48,10 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-sort-by-usage t)
      better-defaults
      (chinese :variables
-              chinese-default-input-method 'wubi)
+              chinese-default-input-method 'wubi
+              chinese-enable-fcitx t
+              chinese-enable-youdao-dict t
+              )
      emacs-lisp
      (python :variables
              python-test-runner 'pytest)
@@ -489,7 +492,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 ;;  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
-;;  (spacemacs//set-monospaced-font   "Space Mono" "WenQuanYi Micro Hei" 18 20)
+  (spacemacs//set-monospaced-font   "Space Mono" "WenQuanYi Micro Hei" 18 22)
   (setenv "WORKON_HOME" "~/anaconda3/envs")
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))

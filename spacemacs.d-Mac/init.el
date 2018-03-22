@@ -69,7 +69,7 @@ This function should only modify configuration layer settings."
      ;; yaml
      shell-scripts
      (shell :variables
-            shell-default-shell 'term
+            shell-default-shell 'eshell
             shell-default-height 40
             shell-default-full-span nil
             )
@@ -509,6 +509,12 @@ you should place your code here."
    )
 
   (add-hook 'doc-view-minor-mode-hook 'auto-revert-mode)
+
+  ;; key bindings
+  (spacemacs/set-leader-keys
+    "oy" 'youdao-dictionary-search
+    "od" 'find-by-pinyin-dired
+    )
 
   )
 

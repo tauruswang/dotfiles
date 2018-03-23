@@ -69,7 +69,7 @@ This function should only modify configuration layer settings."
      ;; yaml
      shell-scripts
      (shell :variables
-            shell-default-shell 'eshell
+            shell-default-shell 'term
             shell-default-height 40
             shell-default-full-span nil
             )

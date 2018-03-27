@@ -29,6 +29,9 @@ export WORKON_HOME=$HOME/anaconda3/envs
 export PROJECT_HOME=$HOME/Workspace
 source $HOME/anaconda3/bin/virtualenvwrapper.sh
 
+# add for autoenv
+source $(which activate.sh)
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'

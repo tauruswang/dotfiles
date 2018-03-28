@@ -69,6 +69,11 @@
            (file "~/ownCloud/org/snippet.org")
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
 
+          ("w" "English Word"
+           entry
+           (file+headline "~/ownCloud/org/english.org" "Words")
+           "* %?\n\tCaptured %U\n \t%a")
+
           ("b" "Brain" plain (function org-brain-goto-end)
            "* %i%?" :empty-lines 1)
 

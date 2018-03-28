@@ -29,6 +29,9 @@ export WORKON_HOME=$HOME/anaconda3/envs
 export PROJECT_HOME=$HOME/Workspace
 source $HOME/anaconda3/bin/virtualenvwrapper.sh
 
+# add for pipenv
+eval "$(pipenv --completion)"
+
 # add for autoenv
 source $(which activate.sh)
 

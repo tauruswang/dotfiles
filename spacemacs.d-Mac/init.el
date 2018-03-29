@@ -516,6 +516,8 @@ you should place your code here."
     "od" 'find-by-pinyin-dired
     )
 
+  ;; fix company's not setup in the first python buffer issue
+  (spacemacs//python-setup-anaconda-company)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -58,9 +58,11 @@ This function should only modify configuration layer settings."
      django
      javascript
      html
-     (ivy :variables
-          ivy-wrap t
-          )
+     ;; (ivy :variables
+     ;;      ivy-wrap t
+     ;;      )
+     (helm :variables
+           helm-enable-auto-resize t)
      dash
      ;; (latex :variables
      ;;        latex-build-command "LaTeX"

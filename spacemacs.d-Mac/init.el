@@ -517,6 +517,7 @@ you should place your code here."
     "oy" 'youdao-dictionary-search
     "od" 'find-by-pinyin-dired
     )
+  (define-key evil-insert-state-map (kbd "C-SPC") 'toggle-input-method)
 
   ;; fix company's not setup in the first python buffer issue
   (spacemacs//python-setup-anaconda-company)

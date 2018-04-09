@@ -94,7 +94,7 @@ This function should only modify configuration layer settings."
                      enable-flyspell-auto-completion t)
      syntax-checking
      (semantic :disabled-for emacs-lisp)
-     ;; neotree
+     neotree
      )
 
    ;; List of additional packages that will be installed without being

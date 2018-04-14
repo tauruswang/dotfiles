@@ -33,7 +33,7 @@ source $HOME/anaconda3/bin/virtualenvwrapper.sh
 eval "$(pipenv --completion)"
 
 # add for autoenv
-source $(which activate.sh)
+# source $(which activate.sh)
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

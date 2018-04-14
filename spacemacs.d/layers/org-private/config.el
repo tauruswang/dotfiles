@@ -130,6 +130,7 @@
             :with-toc nil
             :auto-sitemap t
             :sitemap-title "Sitemap"
+            :recursive t
             :html-preamble t)
 
           ("images"

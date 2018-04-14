@@ -121,8 +121,8 @@
   (setq org-publish-project-alist
         '(("orgfiles"
             :base-directory "~/Nextcloud/org/"
-            :base-extension "org"
-            :publishing-directory "~/localData/org_publish/"
+            :base-extension "org\\|md"
+            :publishing-directory "~/Nextcloud/org_publish/"
             :publishing-function org-html-publish-to-html
             :exclude "login.org"   ;; regexp
             :headline-levels 3
@@ -135,13 +135,13 @@
           ("images"
             :base-directory "~/Nextcloud/org/images/"
             :base-extension "jpg\\|gif\\|png"
-            :publishing-directory "~/localData/org_publish/images/"
+            :publishing-directory "~/Nextcloud/org_publish/images/"
             :publishing-function org-publish-attachment)
 
           ("other"
             :base-directory "~/Nextcloud/org/other/"
             :base-extension "css\\|el\\|setup"
-            :publishing-directory "~/localData/org_publish/other/"
+            :publishing-directory "~/Nextcloud/org_publish/other/"
             :publishing-function org-publish-attachment)
           ("website" :components ("orgfiles" "images" "other"))))
   )

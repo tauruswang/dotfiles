@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
              python-test-runner 'pytest)
      ruby
      django
-     javascript
+     (javascript :variables javascript-disable-tern-port-files nil)
      html
      ;; (ivy :variables
      ;;      ivy-wrap t

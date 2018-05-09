@@ -6,6 +6,8 @@ alias emacs='emacs&'
 alias ed='emacs --daemon'
 alias et='emacsclient -t'
 alias ec='emacsclient -c &'
+# Vim
+alias vi='nvim'
 
 
 # Linux only

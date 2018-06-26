@@ -8,6 +8,7 @@ alias et='emacsclient -t'
 alias ec='emacsclient -c &'
 # Vim
 alias vi='nvim'
+alias vim='nvim'
 
 
 # Linux only

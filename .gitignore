@@ -2,3 +2,4 @@ ss.json
 zsh_custom/plugins/
 .tmux/
 /.spacemacs.d/spacemacs.env
+/.spacemacs.d/.spacemacs.env

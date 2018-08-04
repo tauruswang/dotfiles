@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
               chinese-enable-youdao-dict t
               )
      emacs-lisp
+     racket
      (python :variables
              python-test-runner 'pytest)
      ruby

@@ -21,8 +21,8 @@
                '("title" "#+TITLE: ?\n#+SETUPFILE: ./other/theme-bigblow.setup\n#+STARTUP: lognotereschedule\n\n"))
 
   ;; Task and org-capture management
-  (setq org-directory "~/Nextcloud/org")
-  (setq org-brain-path "~/Nextcloud/org/brain")
+  (setq org-directory "~/Dropbox/org")
+  (setq org-brain-path "~/Dropbox/org/brain")
 
   (setq org-plantuml-jar-path
         (expand-file-name "~/plantuml.jar"))
@@ -42,36 +42,36 @@
         '(
           ("l" "Today I Learned..."
            entry
-           (file+olp+datetree "~/Nextcloud/org/til.org")
+           (file+olp+datetree "~/Dropbox/org/til.org")
            "* %?\n")
 
           ("j" "Journal"
            entry
-           (file+olp+datetree "~/Nextcloud/org/journal.org")
+           (file+olp+datetree "~/Dropbox/org/journal.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("t" "Trade Journal"
            entry
-           (file+olp+datetree "~/Nextcloud/org/trade_journal.org")
+           (file+olp+datetree "~/Dropbox/org/trade_journal.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("n" "Note"
            entry
-           (file "~/Nextcloud/org/note.org")
+           (file "~/Dropbox/org/note.org")
            "* %^{Brief Description} %^g\n%?\n\tCaptured %U")
 
           ("r" "Review"
            entry
-           (file+olp+datetree "~/Nextcloud/org/review.org")
+           (file+olp+datetree "~/Dropbox/org/review.org")
            "* %?\n")
 
           ("c" "Code Snippet" entry
-           (file "~/Nextcloud/org/snippet.org")
+           (file "~/Dropbox/org/snippet.org")
            "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
 
           ("w" "English Word"
            entry
-           (file+headline "~/Nextcloud/org/english.org" "Words")
+           (file+headline "~/Dropbox/org/english.org" "Words")
            "* %?\n\tCaptured %U\n \t%a")
 
           ("b" "Brain" plain (function org-brain-goto-end)
@@ -79,7 +79,7 @@
 
           ("g" "GTD"
            entry
-           (file+headline "~/Nextcloud/org/gtd.org" "Inbox")
+           (file+headline "~/Dropbox/org/gtd.org" "Inbox")
            "* %?\n\tCaptured %U\n \t%a")))
 
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
@@ -120,9 +120,9 @@
   ;; Publish
   (setq org-publish-project-alist
         '(("orgfiles"
-            :base-directory "~/Nextcloud/org/"
+            :base-directory "~/Dropbox/org/"
             :base-extension "org\\|md"
-            :publishing-directory "~/Nextcloud/org_publish/"
+            :publishing-directory "~/Dropbox/org_publish/"
             :publishing-function org-html-publish-to-html
             :exclude "login.org"   ;; regexp
             :headline-levels 3
@@ -134,15 +134,15 @@
             :html-preamble t)
 
           ("images"
-            :base-directory "~/Nextcloud/org/images/"
+            :base-directory "~/Dropbox/org/images/"
             :base-extension "jpg\\|gif\\|png"
-            :publishing-directory "~/Nextcloud/org_publish/images/"
+            :publishing-directory "~/Dropbox/org_publish/images/"
             :publishing-function org-publish-attachment)
 
           ("other"
-            :base-directory "~/Nextcloud/org/other/"
+            :base-directory "~/Dropbox/org/other/"
             :base-extension "css\\|el\\|setup"
-            :publishing-directory "~/Nextcloud/org_publish/other/"
+            :publishing-directory "~/Dropbox/org_publish/other/"
             :publishing-function org-publish-attachment)
           ("website" :components ("orgfiles" "images" "other"))))
   )

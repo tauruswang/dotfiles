@@ -3,3 +3,5 @@ zsh_custom/plugins/
 .tmux/
 /.spacemacs.d/spacemacs.env
 /.spacemacs.d/.spacemacs.env
+/fish/fish_history
+/fish/fishd.985aebcefe52

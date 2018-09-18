@@ -2,5 +2,6 @@ set PATH ~/anaconda3/bin $PATH
 
 thefuck --alias | source
 
-if test -f /home/xashes/.autojump/share/autojump/autojump.fish; . /home/xashes/.autojump/share/autojump/autojump.fish; end
+if test -f $HOME/.autojump/share/autojump/autojump.fish; . $HOME/.autojump/share/autojump/autojump.fish; end
 
+eval (pipenv --completion)

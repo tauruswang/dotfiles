@@ -1,7 +1,7 @@
 set -x LANG en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
 
-set PATH ~/anaconda3/bin $PATH
+set -x PATH ~/anaconda3/bin $PATH
 
 thefuck --alias | source
 

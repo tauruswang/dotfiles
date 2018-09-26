@@ -502,7 +502,6 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 ;;  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
   (spacemacs//set-monospaced-font   "Space Mono" "WenQuanYi Micro Hei" 18 22)
-  (setenv "WORKON_HOME" "~/anaconda3/envs")
   (setq web-mode-engines-alist
         '(("django" . "\\.html\\'")))
   (setq powerline-default-separator "arrow")
@@ -528,6 +527,9 @@ you should place your code here."
 
   ;; fix company's not setup in the first python buffer issue
   (spacemacs//python-setup-anaconda-company)
+
+  ;; enable evil-cleverparens
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

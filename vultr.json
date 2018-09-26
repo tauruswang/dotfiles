@@ -1,0 +1,10 @@
+{
+	"server":"104.238.188.230",
+	"server_port":14128,
+	"local_address":"127.0.0.1",
+	"local_port":1081,
+	"password":"nesCafeCWL53528",
+	"timeout":300,
+	"method":"aes-256-cfb",
+	"fast_open": true
+}
